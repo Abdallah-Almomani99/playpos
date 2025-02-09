@@ -1,0 +1,470 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    background-color: #f4f4f4;
+    margin-right: 5px;
+}
+
+.tab.active {
+    background-color: white;
+    border-bottom: none;
+}
+
+.tab-content {
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+    background-color: white;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.card img {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.card button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #ddd;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it is above other content */
+}
+
+.show-modal {
+    display: flex !important;
+    /* Override display: none */
+}
+
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    /* Centered and limited in width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.modal-content #timeSlots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    /* padding: 10px; */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.modal-content .close-btn {
+    background-color: red;
+    color: white;
+    /* padding: 10px 20px; */
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .close-btn:hover {
+    background-color: darkred;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.modal-content input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.modal-content p {
+    /* margin-bottom: 20px; */
+    color: red;
+    /* font-size: 0.9rem; */
+}
+
+.confirm-btn {
+    /* width: 100%; */
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.confirm-btn,
+.close-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.confirmb-btn {
+    background-color: green;
+    color: white;
+}
+
+.confirmb-btn:hover {
+    background-color: darkgreen;
+}
+
+.close-btn {
+    background-color: red;
+    color: white;
+    margin-left: 10px;
+}
+
+.close-btn:hover {
+    background-color: darkred;
+}
+
+/* Drink modal styles */
+.drink-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.drinks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.drink-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.drink-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.drink-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 20px;
+
+}
+
+.drink-card p {
+    font-size: 1rem;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.qty-btn {
+    background: #ddd;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.qty-btn:hover {
+    background: #ccc;
+}
+
+.quantity-container input[type="number"] {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    background: white;
+}
+
+.add-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.add-btn:hover {
+    background: #218838;
+}
+
+
+
+
+.confirm-btn:hover {
+    background: #0056b3;
+}
+
+
+
+
+.bill-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    opacity: 0;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* Semi-transparent background */
+    /* backdrop-filter: blur(5px); */
+    /* Optional: adds a blur effect */
+    animation: fadeIn 0.3s ease-in-out;
+    /* Fade-in animation */
+}
+
+/* Modal Content */
+.bill-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    /* Center vertically */
+    padding: 20px;
+    width: 90%;
+    /* For responsiveness */
+    max-width: 400px;
+    /* Max width for larger screens */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease-in-out;
+    /* Slide-up animation */
+    position: relative;
+    /* For the close button */
+}
+
+/* Close Button */
+.close-bill {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-bill:hover {
+    color: #ff5252;
+    /* Highlight color for hover */
+}
+
+/* Modal Header */
+.bill-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Bill Details */
+#billDetails {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+#billDetails ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#billDetails li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#billDetails li:last-child {
+    border-bottom: none;
+}
+
+/* Confirm Button */
+.bill-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+.bill-content button:hover {
+    background-color: #45a049;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
