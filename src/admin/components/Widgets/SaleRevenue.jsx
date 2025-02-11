@@ -8,7 +8,7 @@ const SaleRevenue = () => {
                     <div className="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <i className="fa fa-chart-line fa-3x text-primary"></i>
                         <div className="ms-3">
-                            <p className="mb-2">Today Sale</p>
+                            <p className="mb-2">Today Revenue</p>
                             <h6 className="mb-0">$1234</h6>
                         </div>
                     </div>
@@ -17,7 +17,7 @@ const SaleRevenue = () => {
                     <div className="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <i className="fa fa-chart-bar fa-3x text-primary"></i>
                         <div className="ms-3">
-                            <p className="mb-2">Total Sale</p>
+                            <p className="mb-2">Weekly Revenue</p>
                             <h6 className="mb-0">$1234</h6>
                         </div>
                     </div>
@@ -26,7 +26,7 @@ const SaleRevenue = () => {
                     <div className="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <i className="fa fa-chart-area fa-3x text-primary"></i>
                         <div className="ms-3">
-                            <p className="mb-2">Today Revenue</p>
+                            <p className="mb-2">Monthly Revenue</p>
                             <h6 className="mb-0">$1234</h6>
                         </div>
                     </div>

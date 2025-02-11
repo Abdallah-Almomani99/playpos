@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom"; // استبدل `NavLink` إذا كنت تريد تحديد الصفحة النشطة
+import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ isSidebarOpen }) => {
     return (
-        <div className="sidebar pe-4 pb-3">
+        <div className={`sidebar pb-3 ${isSidebarOpen ? "" : "d-none"}`}>
             <nav className="navbar bg-light navbar-light">
                 <a href="/" className="navbar-brand mx-4 mb-3">
                     <h3 className="text-primary">
@@ -22,6 +22,9 @@ const Sidebar = () => {
                     </Link>
                     <Link to="/admin/drinks" className="nav-item nav-link">
                         <i className="fa fa-coffee me-2"></i> Drinks
+                    </Link>
+                    <Link to="/admin/orders" className="nav-item nav-link">
+                        <i className="fa fa-shopping-cart me-2"></i> Orders
                     </Link>
                 </div>
             </nav>
