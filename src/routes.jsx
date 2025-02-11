@@ -5,6 +5,7 @@ import UsersLayout from "./admin/UsersPage.jsx";
 import OrdersLayout from "./admin/OrdersPage.jsx";
 import DrinksLayout from "./admin/DrinksPage.jsx";
 import UserLayout from "./users/index.jsx";
+import SignIn from "./admin/SignIn.jsx";
 
 const AppRoutes = () => {
     return (
@@ -19,8 +20,9 @@ const AppRoutes = () => {
                 <Route path="/admin/orders" element={<OrdersLayout />} />
 
 
-                <Route path="/*" element={<UserLayout />} />
+                <Route path="/signin" element={<SignIn />} />
                 <Route path="/user" element={<UserLayout />} />
+                <Route path="/*" element={<UserLayout />} />
             </Routes>
         </Router>
     );

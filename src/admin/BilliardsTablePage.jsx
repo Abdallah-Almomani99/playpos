@@ -110,6 +110,7 @@ const Table = () => {
                                             <select className="form-select" value={tableType} onChange={(e) => setTableType(e.target.value)} required>
                                                 <option value="Snooker">Snooker Table</option>
                                                 <option value="Billiard">Billiard Table</option>
+                                                <option value="Regular">Regular Table</option>
                                             </select>
                                         </div>
                                         <div className="mb-3">

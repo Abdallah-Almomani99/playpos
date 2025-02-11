@@ -23,7 +23,7 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
                 <ul className="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0" aria-labelledby="userDropdown">
                     <li><a href="#" className="dropdown-item">My Profile</a></li>
                     <li><a href="#" className="dropdown-item">Settings</a></li>
-                    <li><a href="#" className="dropdown-item">Log Out</a></li>
+                    <li><a href="/signin" className="dropdown-item">Log Out</a></li>
                 </ul>
             </div>
         </nav>

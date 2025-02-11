@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div className="container">
       <div className="d-flex justify-content-end">
-        <a href="signin.html" className="btn btn-primary">
+        <a href="/signin" className="btn btn-primary">
           Log out
         </a>
       </div>

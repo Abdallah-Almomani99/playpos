@@ -15,7 +15,7 @@ const DrinkModal = ({ table, close }) => {
     // Change drink quantity (increments or decrements)
     const changeQuantity = (drink, change) => {
         setSelectedDrinks((prev) => {
-            const currentCount = prev[drink] || 1;
+            const currentCount = prev[drink] || 0;
             const newCount = Math.max(1, currentCount + change); // Ensure minimum is 1
             return { ...prev, [drink]: newCount };
         });
@@ -58,7 +58,7 @@ const DrinkModal = ({ table, close }) => {
                                 <input
                                     className="m-0"
                                     type="number"
-                                    value={selectedDrinks[drink.name] || 1}
+                                    value={selectedDrinks[drink.name] || 0}
                                     readOnly
                                 />
                                 <button
